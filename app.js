@@ -23,6 +23,7 @@ app.get('/generateTxnToken', function(request, res) {
     var amount = parseFloat(String(request.query.amount));
     var custId = request.query.custId;
     var key_secret = request.query.key_secret;
+    var callbackUrl = request.query.callbackUrl;
 
     /* query parameters */
     paytmParams.body = {
@@ -34,14 +35,14 @@ app.get('/generateTxnToken', function(request, res) {
         "mid": MID,
 
         /* Find your Website Name in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys */
-        "websiteName": "WEBSTAGGING",
+        "websiteName": "DEFAULT",
 
         /* Enter your unique order id */
         "orderId": orderId,
 
         /* on completion of transaction, we will send you the response on this URL */
         // "callbackUrl": "https://mrdishant.com",
-        // "callbackUrl": "https://securegw-stage.paytm.in/theia/paytmCallback?ORDER_ID=" + orderId,
+        "callbackUrl": callbackUrl,
 
         /* Order Transaction Amount here */
         "txnAmount": {
