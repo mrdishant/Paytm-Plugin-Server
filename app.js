@@ -11,11 +11,12 @@ app.get('/', function(req, res) {
     console.log(req);
     res.send(JSON.stringify({ Hello: 'World' }));
 });
-app.post('/generateTxnToken', function(request, res) {
-    console.log(request);
+app.get('/generateTxnToken', function(request, res) {
+
+
+    console.log(request.query);
+    console.log(request.method);
     console.log(request.body.mid);
-
-
 
     /* initialize an object */
     var paytmParams = {};
