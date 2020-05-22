@@ -109,8 +109,8 @@ app.get('/generateTxnToken', function(request, res) {
                 console.log(orderId);
                 console.log(MID);
                 console.log('Response: ', response);
-                console.log(response['body']['txnToken']);
-                res.send(response['body']['txnToken']);
+                response = JSON.parse(response);
+                res.send(response.body.txnToken);
                 return 0;
             });
         });
