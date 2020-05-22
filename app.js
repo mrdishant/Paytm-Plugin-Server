@@ -14,21 +14,17 @@ app.get('/', function(req, res) {
 app.get('/generateTxnToken', function(request, res) {
 
 
-    console.log(request.query);
-    console.log(request.method);
-    console.log(request.body.mid);
-
     /* initialize an object */
     var paytmParams = {};
 
-    var MID = request.body.mid;
-    var orderId = request.body.orderId;
+    var MID = request.query.mid;
+    var orderId = request.query.orderId;
 
-    var amount = parseFloat(String(request.body.amount));
-    var custId = request.body.custId;
-    var key_secret = request.body.key_secret;
+    var amount = parseFloat(String(request.query.amount));
+    var custId = request.query.custId;
+    var key_secret = request.query.key_secret;
 
-    /* body parameters */
+    /* query parameters */
     paytmParams.body = {
 
         /* for custom checkout value is 'Payment' and for intelligent router is 'UNI_PAY' */
