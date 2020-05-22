@@ -109,6 +109,7 @@ app.get('/generateTxnToken', function(request, res) {
                 console.log(orderId);
                 console.log(MID);
                 console.log('Response: ', response);
+                console.log(response['txnToken']);
                 res.send(response['txnToken']);
                 return 0;
             });
