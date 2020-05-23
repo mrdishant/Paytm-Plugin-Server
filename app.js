@@ -25,6 +25,7 @@ app.get('/generateTxnToken', function(request, res) {
     var key_secret = request.query.key_secret;
     var callbackUrl = request.query.callbackUrl;
     var mode = request.query.mode;
+    var website = request.query.website;
     console.log(callbackUrl);
     console.log(mode);
 
@@ -38,7 +39,7 @@ app.get('/generateTxnToken', function(request, res) {
         "mid": MID,
 
         /* Find your Website Name in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys */
-        "websiteName": "DEFAULT",
+        "websiteName": website,
 
         /* Enter your unique order id */
         "orderId": orderId,
