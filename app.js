@@ -72,7 +72,7 @@ app.get('/generateTxnToken', function(request, res) {
     if (mode == "1") {
         paytmParams.body[
             "enablePaymentMode"] = [{
-            "mode": "CREDIT_CARD",
+            "mode": "NET_BANKING",
         }]
     } else if (mode == "0") {
         paytmParams.body[
