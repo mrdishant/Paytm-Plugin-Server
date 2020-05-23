@@ -39,7 +39,7 @@ app.get('/generateTxnToken', function(request, res) {
         "mid": MID,
 
         /* Find your Website Name in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys */
-        "websiteName": website,
+        "websiteName": website == undefined ? "DEFAULT" : website,
 
         /* Enter your unique order id */
         "orderId": orderId,
