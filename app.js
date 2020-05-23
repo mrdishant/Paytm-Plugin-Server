@@ -24,7 +24,7 @@ app.get('/generateTxnToken', function(request, res) {
     var custId = request.query.custId;
     var key_secret = request.query.key_secret;
     var callbackUrl = request.query.callbackUrl;
-
+    var mode = request.query.mode;
     console.log(callbackUrl);
 
     /* query parameters */
