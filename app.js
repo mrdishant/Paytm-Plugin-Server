@@ -81,9 +81,16 @@ app.get('/generateTxnToken', function(request, res) {
             "enablePaymentMode"] = [{
             "mode": "BALANCE",
         }]
+    } else if (mode == "2") {
+        console.log("Mode 0 So UPI");
+        paytmParams.body[
+            "enablePaymentMode"] = [{
+            "mode": "UPI",
+            "channels": ["UPIPUSH"]
+        }]
     }
 
-    console.log(paytmParams);
+    console.log(JSON.stringify(paytmParams));
 
     /**
      * Generate checksum by parameters we have in body
