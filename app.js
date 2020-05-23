@@ -70,11 +70,13 @@ app.get('/generateTxnToken', function(request, res) {
     console.log(mode);
 
     if (mode == "1") {
+        console.log("Mode 1 So Net Banking");
         paytmParams.body[
             "enablePaymentMode"] = [{
             "mode": "NET_BANKING",
         }]
     } else if (mode == "0") {
+        console.log("Mode 0 So BALANCE");
         paytmParams.body[
             "enablePaymentMode"] = [{
             "mode": "BALANCE",
