@@ -82,14 +82,14 @@ app.get('/generateTxnToken', function(request, res) {
             "mode": "BALANCE",
         }]
     } else if (mode == "2") {
-        console.log("Mode 0 So UPI");
+        console.log("Mode 2 So UPI");
         paytmParams.body[
             "enablePaymentMode"] = [{
             "mode": "UPI",
             "channels": ["UPIPUSH"]
         }]
-    } else if (mode == "2") {
-        console.log("Mode 0 So UPI");
+    } else if (mode == "3") {
+        console.log("Mode 3 So CC");
         paytmParams.body[
             "enablePaymentMode"] = [{
             "mode": "CREDIT_CARD"
