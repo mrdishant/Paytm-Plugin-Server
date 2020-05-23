@@ -87,7 +87,6 @@ app.get('/generateTxnToken', function(request, res) {
         paytmParams.body[
             "enablePaymentMode"] = [{
             "mode": "UPI",
-            "channels": ["UPIPUSH"]
         }]
     } else if (mode == "3") {
         console.log("Mode 3 So CC");
