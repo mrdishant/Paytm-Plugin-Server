@@ -26,6 +26,7 @@ app.get('/generateTxnToken', function(request, res) {
     var callbackUrl = request.query.callbackUrl;
     var mode = request.query.mode;
     console.log(callbackUrl);
+    console.log(mode);
 
     /* query parameters */
     paytmParams.body = {
@@ -65,6 +66,9 @@ app.get('/generateTxnToken', function(request, res) {
 
     };
 
+    console.log("Mode");
+    console.log(mode);
+
     if (mode == "1") {
         paytmParams.body[
             "enablePaymentMode"] = [{
@@ -76,6 +80,8 @@ app.get('/generateTxnToken', function(request, res) {
             "mode": "BALANCE",
         }]
     }
+
+    console.log(paytmParams);
 
     /**
      * Generate checksum by parameters we have in body
