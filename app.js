@@ -88,6 +88,12 @@ app.get('/generateTxnToken', function(request, res) {
             "mode": "UPI",
             "channels": ["UPIPUSH"]
         }]
+    } else if (mode == "2") {
+        console.log("Mode 0 So UPI");
+        paytmParams.body[
+            "enablePaymentMode"] = [{
+            "mode": "CREDIT_CARD"
+        }]
     }
 
     console.log(JSON.stringify(paytmParams));
