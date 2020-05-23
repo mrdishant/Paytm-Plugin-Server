@@ -25,6 +25,8 @@ app.get('/generateTxnToken', function(request, res) {
     var key_secret = request.query.key_secret;
     var callbackUrl = request.query.callbackUrl;
 
+    console.log(callbackUrl);
+
     /* query parameters */
     paytmParams.body = {
 
