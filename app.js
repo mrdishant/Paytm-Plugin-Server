@@ -62,7 +62,20 @@ app.get('/generateTxnToken', function(request, res) {
             /* unique id that belongs to your customer */
             "custId": custId,
         },
+
     };
+
+    if (mode == "1") {
+        paytmParams.body[
+            "enablePaymentMode"] = [{
+            "mode": "CREDIT_CARD",
+        }]
+    } else if (mode == "0") {
+        paytmParams.body[
+            "enablePaymentMode"] = [{
+            "mode": "BALANCE",
+        }]
+    }
 
     /**
      * Generate checksum by parameters we have in body
