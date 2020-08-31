@@ -13,6 +13,9 @@ app.get('/', function(req, res) {
 });
 app.post('/generateTxnToken', function(request, res) {
 
+    console.log(request);
+    console.log(request.body);
+
 
     /* initialize an object */
     var paytmParams = {};
