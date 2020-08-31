@@ -11,7 +11,7 @@ app.get('/', function(req, res) {
     console.log(req);
     res.send(JSON.stringify({ Hello: 'World' }));
 });
-app.get('/generateTxnToken', function(request, res) {
+app.post('/generateTxnToken', function(request, res) {
 
 
     /* initialize an object */
