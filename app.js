@@ -33,6 +33,7 @@ app.post('/generateTxnToken', function(request, res) {
     var callbackUrl = request.body.callbackUrl;
     var mode = request.body.mode;
     var website = request.body.website;
+    var testing = String(request.body.testing);
     console.log(callbackUrl);
     console.log(mode);
 
@@ -127,11 +128,13 @@ app.post('/generateTxnToken', function(request, res) {
 
         var options = {
 
+
+
             /* for Staging */
-            hostname: 'securegw.paytm.in',
+
 
             /* for Production */
-            // hostname: 'securegw.paytm.in',
+            hostname: testing == "0" ? 'securegw-stage.paytm.in' : 'securegw.paytm.in',
 
             port: 443,
             path: '/theia/api/v1/initiateTransaction?mid=' + MID + '&orderId=' + orderId,
