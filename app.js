@@ -17,15 +17,15 @@ app.get('/generateTxnToken', function(request, res) {
     /* initialize an object */
     var paytmParams = {};
 
-    var MID = request.query.mid;
-    var orderId = request.query.orderId;
+    var MID = request.body.mid;
+    var orderId = request.body.orderId;
 
-    var amount = parseFloat(String(request.query.amount));
-    var custId = request.query.custId;
-    var key_secret = request.query.key_secret;
-    var callbackUrl = request.query.callbackUrl;
-    var mode = request.query.mode;
-    var website = request.query.website;
+    var amount = parseFloat(String(request.body.amount));
+    var custId = request.body.custId;
+    var key_secret = request.body.key_secret;
+    var callbackUrl = request.body.callbackUrl;
+    var mode = request.body.mode;
+    var website = request.body.website;
     console.log(callbackUrl);
     console.log(mode);
 
