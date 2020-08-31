@@ -7,6 +7,10 @@ const https = require('https');
 
 const checksum_lib = require('./checksum');
 
+
+app.use(express.json()); // to support JSON-encoded bodies
+app.use(express.urlencoded()); //
+
 app.get('/', function(req, res) {
     console.log(req);
     res.send(JSON.stringify({ Hello: 'World' }));
